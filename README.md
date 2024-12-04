@@ -98,3 +98,33 @@ SELECT columns
 FROM view_name;
 ```
 
+* SQL query structure
+
+As one would have noticed a SQL has the following structure:
+
+```sql
+SELECT columns
+FROM table
+WHERE condition
+LIMIT number;
+```
+
+As we can see keywords are in uppercase, each keyword is in a new line and the query ends with a semicolumn (;). The uppercase and newline thing is notandatory however it is good practice, allow better readability and is recommended. The above query works fine but is not as readable as the above:
+
+```sql
+select columns from table where condition limit number
+```
+
+Now, let's breakdown how a SQL query is executed. For that, let's consider the following query:
+
+```sql
+SELECT name, price
+FROM products
+LIMIT 10;
+```
+
+This query is executed in following order:
+- ```FROM products```
+- ```SELECT name, price```
+- ```LIMIT 10```
+So first the `products` table is fetched, then the `name` and `price` columns are selected and finally the limit of 10 is applied to take only the 10 first records.
